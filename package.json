@@ -1,0 +1,31 @@
+{
+  "name": "parceltemplate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@cerebral/react": "^3.1.0",
+    "cerebral": "^4.1.0",
+    "emotion": "^8.0.12",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^8.0.12"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development parcel index.html ",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
+    "test": "./node_modules/.bin/standard \"src/**/*.js\" && jest --env=jsdom",
+    "lint": "./node_modules/.bin/standard \"src/**/*.js\"",
+    "lint-fix": "./node_modules/.bin/standard \"src/**/*.js\" --fix",
+    "format": "prettier-standard 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "babel-preset-react-app": "^3.1.0",
+    "babel-runtime": "6.23.0",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.15.0",
+    "jest": "^22.1.4",
+    "parcel-bundler": "^1.5.0",
+    "prettier-standard": "^8.0.0",
+    "standard": "^10.0.3"
+  }
+}
