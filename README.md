@@ -23,7 +23,7 @@ Bundling is handled with parcel bundler (https://parceljs.org/) which provides f
 Clone and install deps
 
 ```
-git clone git@github.com:tkivela/parceltemplate.git
+git clone https://github.com/tkivela/parceltemplate.git
 cd parceltemplate
 yarn
 yarn start
