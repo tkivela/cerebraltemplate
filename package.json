@@ -15,16 +15,24 @@
     "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
     "test": "./node_modules/.bin/standard \"src/**/*.js\" && jest --env=jsdom",
     "lint": "./node_modules/.bin/standard \"src/**/*.js\"",
-    "lint-fix": "./node_modules/.bin/standard \"src/**/*.js\" --fix",
+    "lint-fix": "prettier-standard 'src/**/*.js' && ./node_modules/.bin/standard \"src/**/*.js\" --fix",
     "format": "prettier-standard 'src/**/*.js'"
   },
   "devDependencies": {
     "babel-preset-react-app": "^3.1.0",
     "babel-runtime": "6.23.0",
     "cross-env": "^5.1.1",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.1.4",
     "parcel-bundler": "^1.5.0",
+    "parcel-plugin-eslint": "^1.0.3",
     "prettier-standard": "^8.0.0",
     "standard": "^10.0.3"
   }
