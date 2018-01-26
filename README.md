@@ -73,6 +73,13 @@ yarn test
 Running tests runs Javascript Standard Style (https://standardjs.com/) linting rules before running unit tests with Jest.
 I've included example tests for Cerebral signals and computes.
 
+## Test coverage
+Report test code coverage with
+
+```
+yarn coverage
+```
+
 ## Linting
 Check for linting errors with
 ```
@@ -87,3 +94,11 @@ yarn lint-fix
 ## Debugging
 
 By using Cerebral debugger (https://github.com/cerebral/cerebral-debugger/releases) you can debug state changes & signals by attaching it to port 8585 (port can be changed from controller.js if needed). Otherwise normal debugging (with sourcemaps) can be done from browser's devtools.
+
+## Format code with Prettier
+Format code with Prettier
+
+```
+yarn format
+```
+note that code formatting is also automatically done with 'yarn lint-fix'.
