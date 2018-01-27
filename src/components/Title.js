@@ -1,19 +1,17 @@
 import { connect } from '@cerebral/react'
 import { state } from 'cerebral/tags'
 import React from 'react'
-import styled from 'react-emotion'
-
-// Create a <Wrapper> react component that renders a <div> with
-// some padding and a papayawhip background
-const TitleHeader = styled('h1')`
-  color: #aa44aa;
-`
+import { css } from 'react-emotion'
 
 export default connect(
   {
     title: state`title`
   },
   ({ title, inputChanged }) => {
-    return <TitleHeader>{title}</TitleHeader>
+    const wrapperStyle = css`
+      color: #aa44aa;
+    `
+
+    return <h1 className={wrapperStyle}>{title}</h1>
   }
 )

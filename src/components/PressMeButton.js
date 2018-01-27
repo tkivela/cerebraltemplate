@@ -1,14 +1,7 @@
 import { signal, state } from 'cerebral/tags'
 import { connect } from '@cerebral/react'
 import React from 'react'
-import styled from 'react-emotion'
-
-// Create a <Wrapper> react component that renders a <div> with
-// some padding and a papayawhip background
-const Wrapper = styled('div')`
-  color: black;
-  background-color: lightblue;
-`
+import { css } from 'react-emotion'
 
 export default connect(
   {
@@ -17,14 +10,21 @@ export default connect(
   },
   ({ buttonClicked, buttonHasBeenClicked }) => {
     const buttonCaption = buttonHasBeenClicked ? 'You clicked me!' : 'Click me'
+
+    const wrapperStyle = css`
+      color: black;
+      background-color: lightblue;
+    `
+
     return (
-      <Wrapper
+      <div
+        className={wrapperStyle}
         onClick={() => {
           buttonClicked()
         }}
       >
         {buttonCaption}
-      </Wrapper>
+      </div>
     )
   }
 )

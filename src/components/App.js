@@ -1,21 +1,11 @@
 import { connect } from '@cerebral/react'
 import { state, signal } from 'cerebral/tags'
 import React from 'react'
-import styled from 'react-emotion'
+import { css } from 'react-emotion'
 
 import Title from './Title'
 import InputLength from './InputLength'
 import PressMeButton from './PressMeButton'
-
-// Create a <Wrapper> react component that renders a <div> with
-// some padding and a papayawhip background
-const Wrapper = styled('div')`
-  padding: 4em;
-  background: papayawhip;
-  width: 300px;
-  word-wrap: break-word;
-  text-align: center;
-`
 
 export default connect(
   {
@@ -23,8 +13,16 @@ export default connect(
     inputChanged: signal`inputChanged`
   },
   ({ title, inputChanged }) => {
+    const wrapperStyle = css`
+      padding: 4em;
+      background: papayawhip;
+      width: 300px;
+      word-wrap: break-word;
+      text-align: center;
+    `
+
     return (
-      <Wrapper>
+      <div className={wrapperStyle}>
         <Title />
         <input
           placeholder='Type your name'
@@ -32,7 +30,7 @@ export default connect(
         />
         <InputLength />
         <PressMeButton />
-      </Wrapper>
+      </div>
     )
   }
 )
