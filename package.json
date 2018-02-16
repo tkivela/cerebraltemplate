@@ -5,37 +5,40 @@
   "dependencies": {
     "@cerebral/react": "^3.1.0",
     "cerebral": "^4.1.0",
-    "emotion": "^8.0.12",
+    "emotion": "^9.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-emotion": "^8.0.12"
+    "react-emotion": "^9.0.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development parcel index.html ",
+    "start": "cross-env NODE_ENV=development parcel index.html --out-dir build",
+    "test": "npm-run-all unittest e2etest",
     "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
-    "test": "./node_modules/.bin/standard \"src/**/*.js\" && jest --env=jsdom",
-    "lint": "./node_modules/.bin/standard \"src/**/*.js\"",
-    "lint-fix": "prettier-standard 'src/**/*.js' && ./node_modules/.bin/standard \"src/**/*.js\" --fix",
-    "format": "prettier-standard 'src/**/*.js'",
-    "coverage": "jest --coverage"
+    "lint": "npm-run-all -s prettier standard",
+    "standard": "standard --verbose \"src/**/*.js\" \"cypress/**/*.js\" | snazzy",
+    "prettier": "prettier-standard 'src/**/*.js' 'cypress/**/*.js'",
+    "unittest": "jest --no-cache",
+    "e2etest": "npm-run-all -p --race --silent start cy:run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --config videoRecording=false"
   },
   "devDependencies": {
-    "babel-plugin-emotion": "^8.0.12",
-    "babel-preset-react-app": "^3.1.0",
-    "babel-runtime": "6.23.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-emotion": "^9.0.1",
+    "babel-preset-react-app": "^3.1.1",
     "cross-env": "^5.1.1",
-    "eslint": "^4.16.0",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-config-standard-react": "^5.0.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.5.1",
-    "eslint-plugin-standard": "^3.0.1",
-    "jest": "^22.1.4",
-    "parcel-bundler": "^1.5.0",
-    "parcel-plugin-eslint": "^1.0.3",
+    "cypress": "^2.0.0",
+    "jest": "^22.2.2",
+    "npm-run-all": "^4.1.2",
+    "parcel-bundler": "^1.6.1",
     "prettier-standard": "^8.0.0",
+    "snazzy": "^7.0.0",
     "standard": "^10.0.3"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
   }
 }
