@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel index.html --out-dir build",
-    "test": "npm-run-all unittest e2etest",
+    "test": "npm-run-all lint unittest e2etest",
     "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
     "lint": "npm-run-all -s prettier standard",
     "standard": "standard --verbose \"src/**/*.js\" \"cypress/**/*.js\" | snazzy",
