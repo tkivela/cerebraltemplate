@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel index.html --out-dir build",
-    "test": "npm-run-all lint unittest e2etest",
+    "test": "npm-run-all -s --silent lint unittest e2etest",
     "build": "npm-run-all test createbuild",
     "createbuild": "cross-env NODE_ENV=production parcel build index.html --public-url /",
     "lint": "npm-run-all -s prettier standard",
