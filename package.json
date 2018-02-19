@@ -40,6 +40,9 @@
     "parser": "babel-eslint",
     "env": [
       "jest"
+    ],
+    "globals": [
+      "cy"
     ]
   }
 }
