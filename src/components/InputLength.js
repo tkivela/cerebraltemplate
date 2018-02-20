@@ -1,6 +1,6 @@
 import { connect } from '@cerebral/react'
-import React from 'react'
 import { css } from 'react-emotion'
+import React from 'react'
 
 import inputLengthCompute from '../modules/app/computes/inputLength'
 

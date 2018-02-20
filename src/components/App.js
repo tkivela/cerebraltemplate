@@ -1,11 +1,11 @@
 import { connect } from '@cerebral/react'
+import { css } from 'react-emotion'
 import { state, signal } from 'cerebral/tags'
 import React from 'react'
-import { css } from 'react-emotion'
 
-import Title from './Title'
 import InputLength from './InputLength'
 import PressMeButton from './PressMeButton'
+import Title from './Title'
 
 export default connect(
   {

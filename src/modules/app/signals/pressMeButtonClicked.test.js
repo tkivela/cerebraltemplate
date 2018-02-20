@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import { CerebralTest } from 'cerebral/test'
 
 import app from '../index'

@@ -1,7 +1,7 @@
-import { signal, state } from 'cerebral/tags'
 import { connect } from '@cerebral/react'
-import React from 'react'
 import { css } from 'react-emotion'
+import { signal, state } from 'cerebral/tags'
+import React from 'react'
 
 export default connect(
   {
