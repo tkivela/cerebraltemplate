@@ -9,9 +9,9 @@ Small React app template with everything you need.
 
 **What's inside?**
 
-* `react`
-* `cerebral`
-* `emotion`
+* `react` (A JavaScript library for building user interfaces)
+* `cerebral` (Declarative state and side effects management)
+* `emotion` (The Next Generation of CSS-in-JS)
 
 and for development time
 * `parcel-bundler` (Blazing fast, zero configuration web application bundler)
@@ -27,8 +27,8 @@ Bundling is handled with parcel bundler (https://parceljs.org/) which provides f
 Clone and install deps
 
 ```
-git clone https://github.com/tkivela/parceltemplate.git
-cd parceltemplate
+git clone https://github.com/tkivela/cerebraltemplate.git
+cd cerebraltemplate
 yarn
 yarn start
 ```
